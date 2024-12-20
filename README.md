@@ -2,10 +2,7 @@
 
 ## Setup Guide
 
-### Follow these steps to get the Event Management Project up and running:
 
-
-### This script automates the setup process for the Event Management Project.
 
 ### Step 1: Configure your Database
 Make sure to configure your database in the .env file (DB_CONNECTION, DB_HOST, DB_PORT, DB_DATABASE, DB_USERNAME, DB_PASSWORD).
