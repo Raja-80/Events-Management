@@ -11,6 +11,8 @@ class RSVP extends Model
 
     protected $fillable = ['user_id', 'event_id'];
 
+    protected $table = 'rsvps';
+
     // An RSVP belongs to a user
     public function user()
     {

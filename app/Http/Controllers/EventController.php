@@ -19,8 +19,8 @@ class EventController extends Controller
     // Display all events
     public function index()
     {
-        // $events = Event::all();  // Get all events
-        return view('home');
+        $events = Event::all();  // Get all events
+        return view('home', compact('events'));
     }
 
     // Display a single event's details
@@ -48,7 +48,7 @@ class EventController extends Controller
 
         $event = Event::create($request->all());
 
-        return redirect()->route('events.index')->with('success', 'Event created successfully.');
+        return redirect()->route('events.app')->with('success', 'Event created successfully.');
     }
 
     // Show the form to edit an existing event (Admin only)
@@ -70,7 +70,7 @@ class EventController extends Controller
 
         $event->update($request->all());
 
-        return redirect()->route('events.index')->with('success', 'Event updated successfully.');
+        return redirect()->route('events.app')->with('success', 'Event updated successfully.');
     }
 
     // Delete an event (Admin only)
@@ -78,6 +78,6 @@ class EventController extends Controller
     {
         $event->delete();
 
-        return redirect()->route('events.index')->with('success', 'Event deleted successfully.');
+        return redirect()->route('events.app')->with('success', 'Event deleted successfully.');
     }
 }

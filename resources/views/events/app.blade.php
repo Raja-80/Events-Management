@@ -5,7 +5,7 @@
         
         {{-- Filters --}}
         <div class="flex space-x-4 mb-6">
-            <form action="{{ route('events.index') }}" method="GET" class="flex space-x-2">
+            <form action="#" method="GET" class="flex space-x-2">
                 <input type="text" name="location" placeholder="Filter by location" class="px-4 py-2 border rounded-md">
                 <input type="date" name="date" class="px-4 py-2 border rounded-md">
                 <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md">Filter</button>

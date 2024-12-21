@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    @include('events.app', ['events' => $events])
 
 
                 </div>
