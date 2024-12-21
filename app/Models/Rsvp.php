@@ -13,13 +13,11 @@ class RSVP extends Model
 
     protected $table = 'rsvps';
 
-    // An RSVP belongs to a user
     public function user()
     {
         return $this->belongsTo(User::class);
     }
 
-    // An RSVP belongs to an event
     public function event()
     {
         return $this->belongsTo(Event::class);

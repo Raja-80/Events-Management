@@ -1,0 +1,145 @@
+/* General Layout */
+.container-edit {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.page-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #333;
+}
+
+/* Form Layout */
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    border-color: #999;
+}
+
+.form-textarea {
+    resize: vertical;
+}
+
+/* Error Handling */
+.error-border {
+    border-color: #e3342f;
+}
+
+.error-message {
+    color: #e3342f;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+/* Button Styling */
+.submit-button {
+    background-color: #5fdb99;
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-left: 79%;
+}
+
+.submit-button:hover {
+    background-color: #5fdb99b9;
+}
+
+/* Responsive Adjustments */
+
+/* Tablets and below */
+@media (max-width: 768px) {
+
+    .container-edit {
+        max-width: 95%;
+        padding: 1rem;
+    }
+
+    .page-title {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr; /* Stack the form fields */
+    }
+
+    .submit-button {
+        margin-left: 0; /* Remove the large margin for smaller screens */
+        width: 100%;
+        padding: 1rem;
+    }
+
+}
+
+/* Small devices (Mobile) */
+@media (max-width: 480px) {
+
+    .page-title {
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+
+    .form-wrapper {
+        gap: 1rem;
+    }
+
+    .form-label {
+        font-size: 0.9rem;
+    }
+
+    .form-input,
+    .form-textarea {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+
+    .submit-button {
+        padding: 1rem 2rem;
+    }
+
+}

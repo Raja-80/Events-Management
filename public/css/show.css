@@ -1,0 +1,135 @@
+/* General Container */
+.containerevent {
+    max-width: 900px;
+    line-height: 1.6;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative; 
+}
+
+/* Event Title */
+.event-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #333;
+}
+
+/* Event Details */
+.event-details p {
+    font-size: .8rem;
+    margin: 13px 0;
+}
+
+/* Button Styles */
+.edit-btn, .delete-btn, .rsvp-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 15px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    height: 34.8px;
+    color: #fff;
+    border: none;
+    margin-left: 20px;
+}
+
+.edit-btn {
+    background-color: #5192eed5;
+}
+
+.edit-btn:hover {
+    background-color: #4177c7; 
+}
+
+.delete-btn {
+    background-color: #e04040;
+}
+
+.delete-btn:hover {
+    background-color: #f5505057;
+}
+
+.rsvp-btn {
+    background-color: #4caf50;
+    color: white;
+}
+
+.rsvp-btn:hover {
+    background-color: #45a049;
+}
+
+/* RSVP Info */
+.rsvp-info.success {
+    color: #4caf50;
+}
+
+.rsvp-info.warning {
+    color: #ff9800;
+}
+
+/* Admin Actions Section */
+.admin-actions {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .containerevent {
+        padding: 15px;
+    }
+
+    .event-title {
+        font-size: 1.8rem;
+    }
+
+    .event-details p {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    /* Admin Actions for Mobile */
+    .admin-actions {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* Full width for buttons in mobile view */
+    .edit-btn, .delete-btn, .rsvp-btn {
+        width: 100%;
+        padding: 10px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .containerevent {
+        padding: 20px;
+    }
+
+    .event-title {
+        font-size: 1.6rem;
+    }
+
+    .btn {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+}

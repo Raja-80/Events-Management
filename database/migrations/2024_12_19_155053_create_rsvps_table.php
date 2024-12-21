@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Schema;
 class CreateRsvpsTable extends Migration
 {
     /**
-     * Run the migrations.
+     *
      *
      * @return void
      */
@@ -19,13 +19,12 @@ class CreateRsvpsTable extends Migration
             $table->foreignId('event_id')->constrained()->onDelete('cascade');
             $table->timestamps();
 
-            // User can RSVP to an event only once
             $table->unique(['user_id', 'event_id']);
         });
     }
 
     /**
-     * Reverse the migrations.
+     * 
      *
      * @return void
      */

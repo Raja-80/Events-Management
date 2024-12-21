@@ -11,7 +11,6 @@ class Event extends Model
 
     protected $fillable = ['name', 'date', 'location', 'description', 'rsvp_limit'];
 
-    // An event can have multiple RSVPs
     public function rsvps()
     {
         return $this->hasMany(RSVP::class);
