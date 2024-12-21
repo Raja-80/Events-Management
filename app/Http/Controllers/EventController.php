@@ -6,6 +6,8 @@ use App\Models\Event;
 use App\Models\Rsvp;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
+
 
 class EventController extends Controller
 {
@@ -39,11 +41,11 @@ class EventController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|max:255',
-            'date' => 'required|date',
-            'location' => 'required',
-            'description' => 'required',
-            'rsvp_limit' => 'required|integer|min:1',
+            'name' => 'required|string|max:255',
+            'date' => 'required|date|after:today',
+            'location' => 'required|string|max:255',
+            'description' => 'required|string|max:1000',
+            'rsvp_limit' => 'required|integer|min:1|max:500', // RSVP limit between 1 and 500
         ]);
 
         $event = Event::create($request->all());
@@ -61,11 +63,11 @@ class EventController extends Controller
     public function update(Request $request, Event $event)
     {
         $request->validate([
-            'name' => 'required|max:255',
-            'date' => 'required|date',
-            'location' => 'required',
-            'description' => 'required',
-            'rsvp_limit' => 'required|integer|min:1',
+            'name' => 'required|string|max:255',
+            'date' => 'required|date|after:today',
+            'location' => 'required|string|max:255',
+            'description' => 'required|string|max:1000',
+            'rsvp_limit' => 'required|integer|min:1|max:500', // RSVP limit between 1 and 500
         ]);
 
         $event->update($request->all());
@@ -76,6 +78,7 @@ class EventController extends Controller
     // Delete an event (Admin only)
     public function destroy(Event $event)
     {
+        Log::info('Destroy method is being triggered');
         $event->delete();
 
         return redirect()->route('events.app')->with('success', 'Event deleted successfully.');

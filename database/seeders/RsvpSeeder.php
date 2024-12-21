@@ -17,7 +17,7 @@ class RsvpSeeder extends Seeder
     public function run()
     {
         // Retrieve the first user and the first event from the database
-        $user = User::first();
+        $user = User::skip(1)->first();
         $event = Event::first();
 
         // Create an RSVP for the user and event

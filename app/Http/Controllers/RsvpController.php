@@ -7,6 +7,9 @@ use App\Models\Rsvp;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+
+// $id = Auth::id();
+
 class RsvpController extends Controller
 {
     // RSVP to an event
@@ -21,6 +24,9 @@ class RsvpController extends Controller
         if ($event->rsvps()->count() >= $event->rsvp_limit) {
             return back()->with('error', 'This event has reached its RSVP limit.');
         }
+
+        // Decrease the RSVP limit by 1 when a user successfully RSVPs
+        $event->decrement('rsvp_limit');
 
         // Create the RSVP
         Rsvp::create([
